@@ -11,10 +11,11 @@ and open the template in the editor.
     </head>
     <body>
         <h1>
-            ユーザー登録画面です。
+            ユーザー登録画面
         </h1>
         <br>
         <form action="register.php" method="post">
+            <form action="edit.php" method="post">
             名前
             <br>
             <input type="text" name="fullname">

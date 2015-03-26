@@ -13,12 +13,7 @@ and open the template in the editor.
         <?php
         //var_dump(PDO::getAvailableDrivers());
             
-            //create connection
-            $con = mysqli_connect("localhost", "root", "", "project1_mysql");
-            //check connection
-            if($con === false){
-                die("ERROR:Could not connect.".mysqli_connect_error());
-            }
+        include_once 'connect.php';
             //get value from form:
             $fullname=$_POST['fullname'];
             $email=$_POST['email'];
@@ -31,7 +26,13 @@ and open the template in the editor.
             
             //insert data into mysql
             $sql = "INSERT INTO project1(Fullname, Email, Password, Sex, Comment) VALUES('$fullname', '$email', '$password', '$sex', '$comment')";
-            if(mysqli_query($con, $sql)){
+            if($fullname==NULL){
+                echo "名前を入力して下さい";
+            }
+            else if($email==NULL){
+                echo "メールを入力して下さい";
+            }
+            else if(mysqli_query($con, $sql)){
                 echo "登録が完了しました<br><br>";
             }else{
                 echo "ERROR".mysqli_error($con);
