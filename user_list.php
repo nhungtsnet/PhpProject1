@@ -55,4 +55,5 @@ and open the template in the editor.
                 echo "<a href = index.php>TOPへ戻る</a>";
             ?>
     </body>
+    
 </html>
