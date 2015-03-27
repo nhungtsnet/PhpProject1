@@ -17,7 +17,7 @@ and open the template in the editor.
                 echo "<script language='javascript'>alert('削除しました');";
                 echo "location.href='user_list.php';</script>";
             }
-          
+            
             mysqli_close($con);
         ?>
         <a href="index.php">TOPへ戻る</a>;

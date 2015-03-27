@@ -25,7 +25,6 @@ and open the template in the editor.
                 }
                 }
                 
-
         </script>
         <table border="1">
             <tr>
