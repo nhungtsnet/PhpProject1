@@ -8,13 +8,25 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>ユーザー照会画面</title>
-        <script type="text/javascript">
-            function edit1(){
-    
-            }
-        </script>
     </head>
     <body>
+        <script type="text/javascript">
+            function doConfirm(){
+                var r=confirm("削除して宜しいでしょうか？");
+                if(r=true){
+                    window.location="delete.php";
+                }
+                else{
+                     return false;
+                    <?php
+                        echo "キャンセルしました";
+                    ?>
+                            //    return false;
+                }
+                }
+                
+
+        </script>
         <table border="1">
             <tr>
                 <td>名前</td>
@@ -34,7 +46,8 @@ and open the template in the editor.
                     <?php echo $row['Email'];?>
                 </td>
                 <td><a href="edit.php?ID=<?php echo $row['ID'];?>"><input type="button" name="edit" value="修正"></a></td>
-                <td><a href="delete.php?ID=<?php echo $row['ID'];?>" onclick="Return confirm('本とに削除して宜しいでしょうか？');"><input type="button" name="delete" value="削除"></a></td>
+                <td><a href="delete.php?ID=<?php echo $row['ID'];?>"><input type="button" name="delete" value="削除" onclick="doConfirm()"></a></td>          
+                <!--<td><button onclick="doConfirm()">削除</button></td>-->
             </tr>
             <?php          
                 }  
