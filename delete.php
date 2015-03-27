@@ -12,14 +12,14 @@ and open the template in the editor.
     <body>
         <?php
             include_once 'connect.php';
+            
             $dl="DELETE FROM project1 WHERE ID=".$_GET['ID'];
             if($con->query($dl)==TRUE){
                 echo "<script language='javascript'>alert('削除しました');";
                 echo "location.href='user_list.php';</script>";
             }
-            
             mysqli_close($con);
         ?>
-        <a href="index.php">TOPへ戻る</a>;
+        <a href="index.php">TOPへ戻る</a>
     </body>
 </html>

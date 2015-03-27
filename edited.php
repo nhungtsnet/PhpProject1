@@ -10,8 +10,10 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php
-            echo "hihi";
-        ?>
+        
+            <?php
+                echo "<br><br>";
+                echo "<a href = index.php>TOPへ戻る</a>";
+            ?>
     </body>
 </html>

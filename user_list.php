@@ -11,20 +11,16 @@ and open the template in the editor.
     </head>
     <body>
         <script type="text/javascript">
-            function doConfirm(){
-                var r=confirm("削除して宜しいでしょうか？");
-                if(r=true){
-                    window.location="delete.php";
+            function doConfirm(ID){
+                console.log('id', ID);
+                var r = confirm("削除して宜しいでしょうか？");
+                if(r === true){
+                    window.location="delete.php?ID=" + ID;
                 }
                 else{
-                     return false;
-                    <?php
-                        echo "キャンセルしました";
-                    ?>
-                            //return false;
+                    return false;
                 }
-                }
-                
+                }     
         </script>
         <table border="1">
             <tr>
@@ -45,7 +41,8 @@ and open the template in the editor.
                     <?php echo $row['Email'];?>
                 </td>
                 <td><a href="edit.php?ID=<?php echo $row['ID'];?>"><input type="button" name="edit" value="修正"></a></td>
-                <td><a href="delete.php?ID=<?php echo $row['ID'];?>"><input type="button" name="delete" value="削除" onclick="doConfirm()"></a></td>          
+                <!--<td><a href="delete.php?ID=<?php echo $row['ID'];?>"><input type="button" name="delete" value="削除" onclick="doConfirm()"></a></td> -->         
+                <td><input type="button" name="delete" value="削除" onclick="doConfirm(<?php echo $row['ID']; ?>)"> </td>               
                 <!--<td><button onclick="doConfirm()">削除</button></td>-->
             </tr>
             <?php          
