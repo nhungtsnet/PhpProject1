@@ -15,7 +15,6 @@ and open the template in the editor.
         </h1>
         <br>
         <form action="register.php" method="post">
-            <form action="edit.php" method="post">
             名前
             <br>
             <input type="text" name="fullname">

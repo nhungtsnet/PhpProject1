@@ -10,8 +10,20 @@ and open the template in the editor.
         <title>ユーザー修正画面</title>
     </head>
     <body>
+        <script type="text/javascript">
+            function doConfirm(ID){
+                console.log('id', ID);
+                var r = confirm("削除して宜しいでしょうか？");
+                if(r === true){
+                    window.location="delete.php?ID=" + ID;
+                }
+                else{
+                    return false;
+                }
+                }     
+        </script>
         <h1>ユーザー修正画面</h1>
-        <form action="edited.php" method="post">
+        
         <?php
             $con_e = mysqli_connect("localhost", "root", "","project1_mysql");
             //check connection
@@ -24,6 +36,7 @@ and open the template in the editor.
             while($row_e = mysqli_fetch_array($result_e)){
         ?>
             <br><br>
+            <form action="edited.php?ID=<?php echo $row_e['ID'];?>" method="post">
             名前
             <br>
             <input type="text" name="fullname" value="<?php
@@ -41,6 +54,7 @@ and open the template in the editor.
             ?>
             <br><br>
             <input type="submit" name="submit" value="修正">
+            </form>
         <?php   
 //            include_once 'connect.php';
 //            

@@ -27,10 +27,10 @@ and open the template in the editor.
             //insert data into mysql
             $sql = "INSERT INTO project1(Fullname, Email, Password, Sex, Comment) VALUES('$fullname', '$email', '$password', '$sex', '$comment')";
             if($fullname==NULL){
-                echo "名前を入力して下さい";
+                echo "名前を入力して下さい<br><br>";
             }
             else if($email==NULL){
-                echo "メールを入力して下さい";
+                echo "メールを入力して下さい<br><br>";
             }
             else if(mysqli_query($con, $sql)){
                 echo "登録が完了しました<br><br>";
@@ -38,8 +38,8 @@ and open the template in the editor.
                 echo "ERROR".mysqli_error($con);
             }
             
-            ?>
-            <?php
+          
+           
             //close connection
            // mysqli_close();
             echo "名前：".$_POST['fullname']." <br><br>";
