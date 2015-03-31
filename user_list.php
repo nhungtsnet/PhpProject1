@@ -20,8 +20,13 @@ and open the template in the editor.
                 else{
                     return false;
                 }
-                }     
+                }
         </script>
+        <form action="search_result.php" method="post">
+            <input type="text" name="search" placeholder="ユーザー名">
+            <input type="submit" name="s_search" value="検索">
+        </form>
+        <br>
         <table border="1">
             <tr>
                 <td>名前</td>
